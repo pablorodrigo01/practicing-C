@@ -10,7 +10,7 @@ int main()
     // e - olho, hair - cabelo, w - peso, h - altura, ayw - media da idade das pessoas de tal altura, pbeall - porcentagem para pessoa de olho azul;
     // pbe = pessoa de olho azul;
 
-    for (i = 1; i <= 2; i++)
+    for (i = 1; i <= 20; i++)
     {
         printf("Insira a Idade da pessoa de numero %d\n", i);
         scanf("%d", &y);
@@ -75,7 +75,7 @@ int main()
         {
             prhwbe++;
         }
-        pwbe = 2 - pbe;
+        pwbe = 20 - pbe;
         if (pwbe == 0)
         {
             pbeall = 100;
