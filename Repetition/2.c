@@ -21,5 +21,5 @@ int main()
 
     printf("O resultado eh: %.2f", s);
 
-    return 0;
+    return 0:
 }
