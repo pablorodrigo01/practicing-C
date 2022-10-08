@@ -7,7 +7,7 @@ int main()
     char check;
     float t, tv = 0, tp = 0, tt, tcp;
 
-    for (i = 1; i <= 5; i++)
+    for (i = 1; i <= 15; i++)
     {
         printf("Insira o codigo da compra de numero %d:\nA Vista - V\nA Prazo - P\n", i);
         check = getchar();
