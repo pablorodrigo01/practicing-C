@@ -39,5 +39,4 @@ int main()
     printf("\nQuantidade de numeros impar: %d\n", impar);
 
     return 0;
-    
 }

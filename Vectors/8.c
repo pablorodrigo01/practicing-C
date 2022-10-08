@@ -30,5 +30,4 @@ int main()
     printf("O aluno(a) com maior medio %c o(a) %s, tendo media final de %.2f", 130, n[imaior], vm);
 
     return 0;
-
 }

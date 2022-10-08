@@ -23,5 +23,4 @@ int main()
     printf("Quantia de numeros negativos: %d", ng);
 
     return 0;
-    
 }
