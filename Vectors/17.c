@@ -1,22 +1,56 @@
 #include <stdio.h>
+/* o.O */
+
+#define TAM 10
 
 int main()
 {
+    int i, j, a[TAM], b[TAM], c[TAM * 2], ax;
 
-    int i, n[2], n2[2], n3[2], j;
-    for (i = 0; i < 2; i++)
+    for (i = 0; i < TAM; i++)
     {
-        printf("Insira o %d%c do 1%c vetor: ", i + 1, 248);
-        scanf("%d", n[i]);
+        printf("\nDigite um valor para A[%i]: ", i);
+        scanf("%i", &a[i]);
+        printf("\nDigite um valor para B[%i]: ", i);
+        scanf("%i", &b[i]);
     }
-    for (i = 0; i < 2; i++)
+    for (i = 0; i < TAM * 2; ++i)
     {
-        printf("Insira o %d%c do 2%c vetor: ", i + 1, 248);
-        scanf("%d", n2[i]);
+        if (i < TAM)
+        {
+            c[i] = a[i];
+        }
+        else
+        {
+            c[i] = b[i - 10];
+        }
     }
-    for (int i = 0; i < 2; i++)
+    for (i = 0; i < TAM * 2; i++)
     {
-        // Desenvolver :D
+        for (j = 0; j < (TAM * 2) - 1; ++j)
+        {
+            if (c[j] <= c[j + 1])
+            {
+                ax = c[j + 1];
+                c[j + 1] = c[j];
+                c[j] = ax;
+            }
+        }
+    }
+    printf("Vetor A: ");
+    for (i = 0; i < TAM; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\nVetor B: ");
+    for (i = 0; i < TAM; i++)
+    {
+        printf("%d ", b[i]);
+    }
+    printf("\nVetore Ordenados: ");
+    for (i = 0; i < TAM * 2; ++i)
+    {
+        printf("%d ", c[i]);
     }
 
     return 0;
