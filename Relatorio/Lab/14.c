@@ -1,3 +1,1 @@
-#include <stdio.h>
-
-int main() {}
+// Linguagem C serie de potencias

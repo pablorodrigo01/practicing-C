@@ -1,100 +1,81 @@
 #include <stdio.h>
-#include <conio.h>
 
-main()
+#define N 2
+#define K 2
+#define M 2
+
+void produto_matrizes(double a[N][K], double b[K][M], double c[N][M], int n, int m, int k)
 {
 
-    // Definição de variaveis
-    int i, j, linhaA, colunaA, linhaB, colunaB, x;
-
-    // Entrada de dados
-    printf("\n Informe a quntidade de linhas da matriz A : ");
-    scanf("%d", &linhaA);
-    printf("\n Informe a quantidade de colunas da matriz A : ");
-    scanf("%d", &colunaA);
-    printf("\n Informe a quntidade de linhas da matriz B : ");
-    scanf("%d", &linhaB);
-    printf("\n Informe a quantidade de colunas da matriz B : ");
-    scanf("%d", &colunaB);
-
-    float matrizA[linhaA][colunaA], matrizB[linhaB][colunaB], matrizC[linhaA][colunaB], aux = 0;
-
-    if (colunaA == linhaB)
+    // Produto das Matrizes
+    for (n = 0; n < N; n++)
     {
-
-        for (i = 0; i < linhaA; i++)
+        for (m = 0; m < M; m++)
         {
-            for (j = 0; j < colunaA; j++)
+            c[n][m] = 0;
+            for (k = 0; k < K; k++)
             {
-                printf("\n\n Informe o valor da %d%c Linha e da %d%c Coluna da Matriz A: ", i + 1, 167, j + 1, 167);
-                scanf("%f", &matrizA[i][j]);
-            }
-            printf("\n");
-        }
-
-        for (i = 0; i < linhaB; i++)
-        {
-            for (j = 0; j < colunaB; j++)
-            {
-                printf("\n\n Informe o valor da %d%c Linha e da %d%c Coluna da 2%c Matriz B: ", i + 1, 167, j + 1, 167, 167);
-                scanf("%f", &matrizB[i][j]);
-            }
-            printf("\n");
-        }
-
-        // Imprime as matrizes definidas
-        printf("---------------------------- 1 - Matriz Gerada ---------------------------------\n\n");
-
-        for (i = 0; i < linhaA; i++)
-        {
-            for (j = 0; j < colunaA; j++)
-            {
-                printf("%6.f", matrizA[i][j]);
-            }
-            printf("\n\n");
-        }
-
-        printf("---------------------------- 2 - Matriz Gerada ---------------------------------\n\n");
-        for (i = 0; i < linhaB; i++)
-        {
-            for (j = 0; j < colunaB; j++)
-            {
-                printf("%6.f", matrizB[i][j]);
-            }
-            printf("\n\n");
-        }
-
-        printf("---------------------------- 3 - Matriz Gerada ---------------------------------\n\n");
-
-        // Processamento e saida em tela  =  PRODUTO DAS MATRIZES
-        for (i = 0; i < linhaA; i++)
-        {
-            for (j = 0; j < colunaB; j++)
-            {
-
-                matrizC[i][j] = 0;
-                for (x = 0; x < linhaB; x++)
-                {
-                    aux += matrizA[i][x] * matrizB[x][j];
-                }
-
-                matrizC[i][j] = aux;
-                aux = 0;
+                c[n][m] += a[n][k] * b[k][m];
             }
         }
-
-        for (i = 0; i < linhaA; i++)
-        {
-            for (j = 0; j < colunaB; j++)
-            {
-                printf("%6.f", matrizC[i][j]);
-            }
-            printf("\n\n");
-        }
-        printf("\n\n");
     }
-    else
+    printf("Matriz A: \n");
+    // Print Matriz A
+    for (n = 0; n < N; n++)
     {
-        printf("\n\n Nao ha com multiplicar as matrizes dadas ");
+        for (k = 0; k < K; k++)
+        {
+            printf("%6.lf", a[n][k]);
+        }
+        printf("\n");
     }
+    printf("\n\n");
+    printf("Matriz B: \n");
+    // Print Matriz B
+    for (k = 0; k < K; k++)
+    {
+        for (m = 0; m < M; m++)
+        {
+            printf("%6.lf", b[k][m]);
+        }
+        printf("\n");
+    }
+    printf("\n\n");
+    printf("Matriz C: \n");
+    // Print Matriz C
+    for (n = 0; n < N; n++)
+    {
+        for (m = 0; m < M; m++)
+        {
+            printf("%6.lf", c[n][m]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    double a[N][K], b[K][M], c[N][M];
+    int n, k, m;
+    // matriz A
+    for (n = 0; n < N; n++)
+    {
+        for (k = 0; k < K; k++)
+        {
+            printf("Informe o valor da %d%c Linha e da %d%c Coluna da Matriz A: ", n + 1, 248, k + 1, 248);
+            scanf("%lf", &a[n][k]);
+        }
+    }
+    // matriz B
+    for (k = 0; k < K; k++)
+    {
+        for (m = 0; m < M; m++)
+        {
+            printf("Informe o valor da %d%c Linha e da %d%c Coluna da Matriz B: ", k + 1, 248, m + 1, 248);
+            scanf("%lf", &b[k][m]);
+        }
+    }
+    produto_matrizes(a, b, c, n, m, k);
+
+    return 0;
 }
