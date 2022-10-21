@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#define N 2
-#define K 2
-#define M 2
+#define N 4
+#define K 4
+#define M 4
 
 void produto_matrizes(double a[N][K], double b[K][M], double c[N][M], int n, int m, int k)
 {

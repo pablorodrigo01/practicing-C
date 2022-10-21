@@ -1,1 +1,0 @@
-// Linguagem C serie de potencias

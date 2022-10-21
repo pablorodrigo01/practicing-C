@@ -18,10 +18,10 @@ int mystrlen(char *string)
 int main()
 {
 
-    char s[10];
-    scanf("%s", &s);
+    char string[10];
+    scanf("%s", &string);
     char *function;
-    function = mystrlen(s);
+    function = mystrlen(string);
     printf("%d\n", function);
 
     return 0;
