@@ -24,8 +24,8 @@ int main()
     scanf("%d", &n);
 
     // 1 - x + (x2/2!) – (x3/3!) + .....(-1)N  * (xN/N!)
-    sn = x - 1;
-    sp = 0;
+    sn = x - 1; // Soma Negativo
+    sp = 0; // Soma positivo
     for (i = 2; i <= n; i++)
     {
         if (c == 0)
